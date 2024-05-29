@@ -41,14 +41,6 @@ Step-by-step instructions to get a local copy running on your machine:
    npm install
    ```
 
-3. Start the project
-   ```sh
-   npm start
-   ```
-   or
-   ```sh
-   npm init
-   ``` 
 
 ---
 
