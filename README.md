@@ -54,32 +54,26 @@ Step-by-step instructions to get a local copy running on your machine:
 
 ```sh
 npm test
+```
 
 Run tests in headed mode
-
-sh
-
+ ```sh
 npm run test:headed
-
+```
 Run tests in a specific browser
 Chrome
-
-sh
-
+ ```sh
 npx playwright test --project=chromium
-
+```
 Firefox
-
-sh
-
+ ```sh
 npx playwright test --project=firefox
-
+```
 View test report
 
-sh
-
+ ```sh
 npm run test:report
-
+```
 Usage
 
 To run the tests, use one of the following commands as per your requirements. The test scripts are configured to run in both headless and headed modes, and across different browsers (Chrome and Firefox).
