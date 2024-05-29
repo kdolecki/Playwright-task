@@ -13,10 +13,14 @@ test.describe('PrestaShop Purchase Flow', () => {
 
         await main.navigating();
         await main.searchingForProduct('T-shirt');
+        
+    //   await results.validateSearchResults(); 
         await results.selectingFirstProduct();
         await results.addingProductToCart();
         console.log('Product added to cart and proceeding to checkout');
-
+        
+    //    await results.validateCartProduct(); 
+        
         await cart.proceedingToCheckout();
         console.log('Clicked proceed to checkout button in cart page');
 
@@ -27,11 +31,17 @@ test.describe('PrestaShop Purchase Flow', () => {
             address: 'Beverly Hills',
             city: 'Los Angeles',
             postcode: '90210',
-            country: 'United States',
-            state: 'California',
+            country: '21', // United States
+            state: '8', // California
         };
 
         await checkout.fillingCheckoutDetails(customerDetails);
+        
+        // Assertion to check order confirmation
+        const orderConfirmationText = await page.frameLocator('iframe[name="framelive"]').locator('.order-confirmation').innerText();
+        expect(orderConfirmationText).toContain('Your order is confirmed');
+
+        // Pause to see the final state
         await page.pause();
     });
 });
