@@ -32,7 +32,7 @@ Step-by-step instructions to get a local copy running on your machine:
 
    ```sh
    git clone git@github.com:kdolecki/Playwright-task.git
-   cd playwright-project
+   cd Playwright-task
    ```
 
 2. Install NPM packages
